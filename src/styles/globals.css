@@ -144,6 +144,83 @@
   --brand-foreground: oklch(0.18 0.02 292);
 }
 
+/* ===== Look: CINEMA — Space Grotesk, near-black, sharp, achromatic =====
+ * Unlike the looks above, this one carries its own full ground (not just an
+ * accent) — it is dark by definition, not a `.dark` variant of a light look
+ * (see darkLooks in src/config/theme.ts, applied alongside data-look). Kept
+ * deliberately colourless: the accent is the same near-white as the text, so
+ * nothing competes with the photography (DESIGN.md §12, museum/gallery brief). */
+:root[data-look="cinema"] {
+  --background: oklch(0.16 0.002 250);
+  --foreground: oklch(0.97 0.001 250);
+  --card: oklch(0.205 0.002 250);
+  --card-foreground: oklch(0.97 0.001 250);
+  --popover: oklch(0.205 0.002 250);
+  --popover-foreground: oklch(0.97 0.001 250);
+  --primary: oklch(0.97 0.001 250);
+  --primary-foreground: oklch(0.16 0.002 250);
+  --secondary: oklch(0.26 0.003 250);
+  --secondary-foreground: oklch(0.97 0.001 250);
+  --muted: oklch(0.22 0.003 250);
+  --muted-foreground: oklch(0.68 0.005 250);
+  --accent: oklch(0.26 0.003 250);
+  --accent-foreground: oklch(0.97 0.001 250);
+  --destructive: oklch(0.704 0.191 22.216);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 15%);
+  --font-display-active: var(--font-space-grotesk);
+  --font-sans-active: var(--font-inter);
+  --radius: 0.125rem;
+  --brand: oklch(0.95 0.002 250);
+  --brand-strong: oklch(0.95 0.002 250);
+  --brand-foreground: oklch(0.16 0.002 250);
+  --surface: var(--card);
+  --glass-blur: 0px;
+  --spotlight-strength: 0;
+  --hover-lift: -0.125rem;
+  --magnet-strength: 0;
+}
+
+/* ===== Look: NOIR — Sora, twilight ground, vivid violet, full-pill =====
+ * Also a fixed-dark look (see CINEMA above). Unlike every other look, the
+ * accent fills `--primary` itself — filled buttons render in the vivid
+ * accent, not neutral ink — a deliberate, louder exception for a luxury
+ * brief where the CTA is meant to glow (real-estate/hospitality reference). */
+:root[data-look="noir"] {
+  --background: oklch(0.14 0.012 280);
+  --foreground: oklch(0.97 0.004 280);
+  --card: oklch(0.19 0.014 280);
+  --card-foreground: oklch(0.97 0.004 280);
+  --popover: oklch(0.19 0.014 280);
+  --popover-foreground: oklch(0.97 0.004 280);
+  --primary: oklch(0.6 0.2 292);
+  --primary-foreground: oklch(0.98 0.005 292);
+  --secondary: oklch(0.24 0.02 280);
+  --secondary-foreground: oklch(0.97 0.004 280);
+  --muted: oklch(0.2 0.016 280);
+  --muted-foreground: oklch(0.66 0.02 280);
+  --accent: oklch(0.24 0.02 280);
+  --accent-foreground: oklch(0.97 0.004 280);
+  --destructive: oklch(0.704 0.191 22.216);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 16%);
+  --font-display-active: var(--font-sora);
+  --font-sans-active: var(--font-inter);
+  /* Large enough to read as a full pill on buttons/badges (radius exceeds
+     half their height) without turning tall surfaces like cards into blobs. */
+  --radius: 1.5rem;
+  --brand: oklch(0.68 0.19 292);
+  --brand-strong: oklch(0.72 0.17 292);
+  --brand-foreground: oklch(0.16 0.02 292);
+  --surface: color-mix(in oklch, var(--card) 55%, transparent);
+  --glass-blur: 32px;
+  --spotlight-strength: 1;
+  --hover-lift: -0.5rem;
+  --magnet-strength: 0.35;
+}
+
 @theme inline {
   /* The active look chooses which loaded family these resolve to. */
   --font-sans: var(--font-sans-active), ui-sans-serif, system-ui, sans-serif;

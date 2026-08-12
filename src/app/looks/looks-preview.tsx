@@ -4,7 +4,12 @@ import { useEffect, useState } from "react";
 
 import { ServiceCards } from "@/components/sections/features";
 import { HeroCentered } from "@/components/sections/hero";
-import { looks, lookDescriptions, type LookName } from "@/config/theme";
+import {
+  darkLooks,
+  looks,
+  lookDescriptions,
+  type LookName,
+} from "@/config/theme";
 import { home } from "@/content/home";
 import { cn } from "@/lib/utils";
 
@@ -19,10 +24,13 @@ export function LooksPreview() {
 
   useEffect(() => {
     const root = document.documentElement;
-    const previous = root.getAttribute("data-look");
+    const previousLook = root.getAttribute("data-look");
+    const wasDark = root.classList.contains("dark");
     root.setAttribute("data-look", look);
+    root.classList.toggle("dark", darkLooks.includes(look));
     return () => {
-      if (previous) root.setAttribute("data-look", previous);
+      if (previousLook) root.setAttribute("data-look", previousLook);
+      root.classList.toggle("dark", wasDark);
     };
   }, [look]);
 

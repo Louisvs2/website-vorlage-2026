@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 
 import { WhatsAppButton } from "@/components/shared/whatsapp-button";
 import { features } from "@/config/features";
-import { activeLook } from "@/config/theme";
+import { activeLook, darkLooks } from "@/config/theme";
 import { siteConfig } from "@/config/site";
 import { fontVariables } from "@/lib/fonts";
+import { cn } from "@/lib/utils";
 
 import "@/styles/globals.css";
 
@@ -22,7 +23,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="de" data-look={activeLook} className={fontVariables}>
+    <html
+      lang="de"
+      data-look={activeLook}
+      className={cn(fontVariables, darkLooks.includes(activeLook) && "dark")}
+    >
       <body>
         {children}
         {features.whatsapp.enabled && features.whatsapp.number && (

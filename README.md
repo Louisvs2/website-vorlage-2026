@@ -2,8 +2,10 @@
 
 Wiederverwendbares Website-Template für Agentur-/Kundenprojekte. Next.js 15
 (App Router, React 19, TypeScript strict, Tailwind CSS 4), mit einem
-Look-Preset-System (glass / editorial / minimal / bold) unter `/looks`, das
-als Ausgangspunkt für jedes neue Kundenprojekt dient.
+Look-Preset-System (glass / editorial / minimal / bold / cinema / noir) unter
+`/looks`, das als Ausgangspunkt für jedes neue Kundenprojekt dient. `cinema`
+und `noir` sind eigenständig dunkle Looks für Marken, die grundsätzlich
+dunkel wirken sollen (Museum, Immobilien, Luxus, Nightlife).
 
 ## Nutzung für ein neues Kundenprojekt
 
