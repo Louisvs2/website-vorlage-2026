@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 
+import { WhatsAppButton } from "@/components/shared/whatsapp-button";
+import { features } from "@/config/features";
 import { activeLook } from "@/config/theme";
 import { siteConfig } from "@/config/site";
 import { fontVariables } from "@/lib/fonts";
@@ -21,7 +23,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de" data-look={activeLook} className={fontVariables}>
-      <body>{children}</body>
+      <body>
+        {children}
+        {features.whatsapp.enabled && features.whatsapp.number && (
+          <WhatsAppButton number={features.whatsapp.number} />
+        )}
+      </body>
     </html>
   );
 }
