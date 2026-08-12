@@ -80,7 +80,8 @@ website-template/
 │   │
 │   ├── config/
 │   │   ├── site.ts                 # ⭐ Zentrale Kundenkonfiguration
-│   │   └── navigation.ts           # Menüstruktur an einer Stelle
+│   │   ├── navigation.ts           # Menüstruktur an einer Stelle
+│   │   └── features.ts             # Feature-Flags (Galerie/Buchung/WhatsApp) — von `npm run setup` generiert
 │   │
 │   ├── content/                    # Statischer Content pro Kunde (typisiert)
 │   ├── lib/
@@ -94,6 +95,9 @@ website-template/
 │
 ├── public/
 │   └── images/
+│
+├── scripts/
+│   └── setup-features.mjs          # Interaktiver Wizard für optionale Features
 │
 ├── .env.example
 ├── components.json                 # shadcn/ui-Konfiguration
@@ -136,6 +140,8 @@ Decken ~90 % jeder Kundenseite ab. Jede Sektion erhält ihren Content als typisi
 - `TeamGrid`
 - `ProcessSteps` — „So arbeiten wir"
 - `ContactSection` mit `ContactForm`
+- `Gallery` — Bilder/Referenzen mit Hover-Zoom (optional, `features.gallery`)
+- `Booking` — Verweis auf externes Buchungstool (optional, `features.booking`)
 
 ### Motion-Wrapper (`components/motion/`)
 
@@ -145,7 +151,7 @@ Decken ~90 % jeder Kundenseite ab. Jede Sektion erhält ihren Content als typisi
 
 ### Shared
 
-`Logo`, `SectionHeading` (Eyebrow + Titel + Subtitle), `CookieConsent` (DSGVO), `SkipLink` (a11y), optional `ThemeToggle`
+`Logo`, `SectionHeading` (Eyebrow + Titel + Subtitle), `CookieConsent` (DSGVO), `SkipLink` (a11y), optional `ThemeToggle`, `WhatsAppButton` — schwebender Kontakt-Button (optional, `features.whatsapp`, im Root-Layout eingehängt)
 
 ### shadcn/ui-Basisset
 

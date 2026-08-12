@@ -96,6 +96,7 @@
 - **CTA label:** [Exact button text, e.g. "Kostenloses Angebot anfordern"]
 - **Destination / mechanism:** [contact form / phone call / booking tool (which?) / email]
 - **What happens after?** [e.g. "we reply within 24h with a callback" — used as reassurance microcopy under the CTA]
+- If the destination is a booking tool: its URL feeds `npm run setup` (Buchungsfeature).
 
 ## 10. Secondary Call To Action
 
@@ -107,7 +108,7 @@
 
 - **Phone:** [+49 ...] — ☐ show prominently in header ☐ footer only
 - **Email:** [info@example.de]
-- **WhatsApp / other channels:** [number or "none"]
+- **WhatsApp / other channels:** [number or "none"] — feeds `npm run setup` (WhatsApp-Button)
 - **Contact person (name + role, for photos/signatures):** [e.g. "Thomas Müller, Owner"]
 - **Preferred contact method for form submissions:** [where do form emails go?]
 - **Response time promise:** [e.g. "within 24 hours" — or "none"]
@@ -260,7 +261,8 @@
 **Homepage sections:**
 ☐ Hero ☐ Logo cloud / "known from" ☐ Services grid ☐ Process steps ("how we work") ☐ Stats ☐ Testimonials ☐ Team ☐ FAQ ☐ Pricing ☐ Final CTA ☐ [Other: ...]
 
-- **Special requirements beyond the template:** [e.g. job listings, gallery, downloads area — flag early, may affect scope/quote]
+- **Special requirements beyond the template:** [e.g. job listings, downloads area — flag early, may affect scope/quote]
+- **Gallery / reference images section?** [yes/no — feeds `npm run setup` (Galerie)]
 
 ## 26. Sections to Avoid
 
