@@ -29,13 +29,13 @@ export function Gallery({
           <ul className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-3 lg:gap-8">
             {images.map((image) => (
               <li key={image.alt}>
-                <FadeIn className="relative aspect-[4/3] overflow-hidden rounded-xl">
+                <FadeIn className="group relative aspect-[4/3] overflow-hidden rounded-xl">
                   <Image
                     src={image.src}
                     alt={image.alt}
                     fill
                     sizes="(min-width: 1024px) 33vw, 50vw"
-                    className="object-cover"
+                    className="object-cover transition-transform duration-300 ease-out group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
                   />
                 </FadeIn>
               </li>
