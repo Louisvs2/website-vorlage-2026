@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import { Container } from "@/components/layout/container";
 import { Section, type SectionBackground } from "@/components/layout/section";
@@ -27,19 +28,30 @@ export function Gallery({
         {intro && <SectionHeading {...intro} />}
         <FadeInStagger fast className={cn(intro && "mt-14 sm:mt-20")}>
           <ul className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-3 lg:gap-8">
-            {images.map((image) => (
-              <li key={image.alt}>
-                <FadeIn className="group relative aspect-[4/3] overflow-hidden rounded-xl">
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    fill
-                    sizes="(min-width: 1024px) 33vw, 50vw"
-                    className="object-cover transition-transform duration-300 ease-out group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
-                  />
-                </FadeIn>
-              </li>
-            ))}
+            {images.map((image) => {
+              const img = (
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  sizes="(min-width: 1024px) 33vw, 50vw"
+                  className="object-cover transition-transform duration-300 ease-out group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+                />
+              );
+              return (
+                <li key={image.alt}>
+                  <FadeIn className="group relative aspect-[4/3] overflow-hidden rounded-xl">
+                    {image.href ? (
+                      <Link href={image.href} className="absolute inset-0">
+                        {img}
+                      </Link>
+                    ) : (
+                      img
+                    )}
+                  </FadeIn>
+                </li>
+              );
+            })}
           </ul>
         </FadeInStagger>
       </Container>

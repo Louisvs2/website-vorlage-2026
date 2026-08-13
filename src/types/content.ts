@@ -18,6 +18,8 @@ export interface SectionIntro {
 export interface SectionImage {
   src: string | StaticImageData;
   alt: string;
+  /** When set, the image becomes a link (e.g. to a project detail page). */
+  href?: string;
 }
 
 /** Logo with intrinsic dimensions (rendered at fixed height, no layout shift). */

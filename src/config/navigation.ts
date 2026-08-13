@@ -2,6 +2,8 @@
 // navigation, and footer render exclusively from this config — adding or
 // removing a page never touches a component.
 
+import { features } from "@/config/features";
+
 export interface NavItem {
   label: string;
   href: string;
@@ -25,6 +27,7 @@ export interface NavigationConfig {
 
 const mainNav: NavItem[] = [
   { label: "Leistungen", href: "/leistungen" },
+  ...(features.gallery ? [{ label: "Referenzen", href: "/projekte" }] : []),
   { label: "Über uns", href: "/ueber-uns" },
   { label: "Kontakt", href: "/kontakt" },
 ];

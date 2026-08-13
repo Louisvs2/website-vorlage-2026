@@ -7,6 +7,7 @@ import type { FaqItem } from "@/components/sections/faq";
 import type { ProcessStep } from "@/components/sections/process";
 import type { Stat } from "@/components/sections/stats";
 import type { Testimonial } from "@/components/shared/testimonial-card";
+import { projects } from "@/content/projects";
 import { services } from "@/content/services";
 import type { Action, SectionImage, SectionIntro } from "@/types/content";
 
@@ -57,22 +58,12 @@ export const home: HomeContent = {
       eyebrow: "Referenzen",
       title: "Ausgewählte Arbeiten",
       subtitle:
-        "Ein kuratierter Ausschnitt echter Projekte — Bildmaterial und Bildunterschriften pro Kundenprojekt austauschen.",
+        "Ein kuratierter Ausschnitt echter Projekte — jedes Bild führt zur vollständigen Fallstudie.",
     },
-    images: [
-      {
-        src: "/images/showcase/editorial.png",
-        alt: "Referenzprojekt, editoriale Gestaltung",
-      },
-      {
-        src: "/images/showcase/split.png",
-        alt: "Referenzprojekt, zweispaltiges Layout",
-      },
-      {
-        src: "/images/showcase/object.png",
-        alt: "Referenzprojekt, freigestelltes Produktbild",
-      },
-    ],
+    images: projects.map((project) => ({
+      ...project.image,
+      href: `/projekte/${project.slug}`,
+    })),
   },
   stats: [
     { value: 120, suffix: "+", label: "Abgeschlossene Projekte" },
