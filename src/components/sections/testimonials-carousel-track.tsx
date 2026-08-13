@@ -39,9 +39,9 @@ export function TestimonialsCarouselTrack({
         ref={trackRef}
         className="-mx-6 flex snap-x snap-mandatory [scrollbar-width:none] gap-6 overflow-x-auto px-6 pb-2 lg:-mx-8 lg:px-8 [&::-webkit-scrollbar]:hidden"
       >
-        {testimonials.map((testimonial) => (
+        {testimonials.map((testimonial, index) => (
           <li
-            key={testimonial.name}
+            key={`${testimonial.name}-${index}`}
             className="w-[85%] shrink-0 snap-start sm:w-[45%] lg:w-[31.5%]"
           >
             <TestimonialCard testimonial={testimonial} />

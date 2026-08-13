@@ -1,5 +1,6 @@
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
+import { SkipLink } from "@/components/shared/skip-link";
 
 export default function MarketingLayout({
   children,
@@ -8,8 +9,11 @@ export default function MarketingLayout({
 }>) {
   return (
     <div className="flex min-h-dvh flex-col">
+      <SkipLink />
       <Header />
-      <main className="flex-1">{children}</main>
+      <main id="main-content" className="flex-1">
+        {children}
+      </main>
       <Footer />
     </div>
   );
