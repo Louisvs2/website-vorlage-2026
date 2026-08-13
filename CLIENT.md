@@ -246,7 +246,7 @@
 
 - **Impressum data complete?** ☐ yes — [legal form, registration court & number, VAT ID, responsible person, supervisory authority/chamber if applicable]
 - **Privacy policy:** ☐ client provides ☐ client's lawyer ☐ generator (which?) — [status]
-- **Analytics/tracking planned:** [Vercel Analytics / other — must be reflected in privacy policy + consent banner]
+- **Analytics/tracking planned:** [Vercel Analytics / other — must be reflected in privacy policy + consent banner] — feeds `npm run setup` (Analytics-Feature, blendet den Cookie-Consent-Banner ein)
 - **Terms & conditions (AGB) page needed?** ☐ yes ☐ no
 - **Cancellation policy / other industry-specific legal pages:** [e.g. Widerrufsbelehrung, or "none"]
 - **Professional regulations** (regulated professions: lawyers, doctors, …): [applicable rules or "n/a"]
@@ -262,7 +262,7 @@
 ☐ Hero ☐ Logo cloud / "known from" ☐ Services grid ☐ Process steps ("how we work") ☐ Stats ☐ Testimonials ☐ Team ☐ FAQ ☐ Pricing ☐ Final CTA ☐ [Other: ...]
 
 - **Special requirements beyond the template:** [e.g. job listings, downloads area — flag early, may affect scope/quote]
-- **Gallery / reference images section?** [yes/no — feeds `npm run setup` (Galerie)]
+- **Gallery / reference images section?** [yes/no — feeds `npm run setup` (Galerie), aktiviert auch `/projekte`-Case-Study-Seiten pro Referenzprojekt]
 
 ## 26. Sections to Avoid
 

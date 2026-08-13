@@ -56,6 +56,9 @@ website-template/
 │   │   │   ├── leistungen/
 │   │   │   │   ├── page.tsx        # Übersicht
 │   │   │   │   └── [slug]/page.tsx # Detailseite pro Leistung
+│   │   │   ├── projekte/           # Optional, nur bei features.gallery
+│   │   │   │   ├── page.tsx        # Übersicht
+│   │   │   │   └── [slug]/page.tsx # Case-Study pro Projekt
 │   │   │   ├── kontakt/page.tsx
 │   │   │   └── layout.tsx          # Header + Footer für Marketing-Seiten
 │   │   ├── (legal)/                # Route Group für Rechtstexte
@@ -81,7 +84,7 @@ website-template/
 │   ├── config/
 │   │   ├── site.ts                 # ⭐ Zentrale Kundenkonfiguration
 │   │   ├── navigation.ts           # Menüstruktur an einer Stelle
-│   │   └── features.ts             # Feature-Flags (Galerie/Buchung/WhatsApp) — von `npm run setup` generiert
+│   │   └── features.ts             # Feature-Flags (Galerie/Buchung/WhatsApp/Analytics) — von `npm run setup` generiert
 │   │
 │   ├── content/                    # Statischer Content pro Kunde (typisiert)
 │   ├── lib/
@@ -140,7 +143,7 @@ Decken ~90 % jeder Kundenseite ab. Jede Sektion erhält ihren Content als typisi
 - `TeamGrid`
 - `ProcessSteps` — „So arbeiten wir"
 - `ContactSection` mit `ContactForm`
-- `Gallery` — Bilder/Referenzen mit Hover-Zoom (optional, `features.gallery`)
+- `Gallery` — Bilder/Referenzen mit Hover-Zoom (optional, `features.gallery`); Bilder verlinken auf `/projekte/[slug]`, wenn gesetzt
 - `Booking` — Verweis auf externes Buchungstool (optional, `features.booking`)
 
 ### Motion-Wrapper (`components/motion/`)
