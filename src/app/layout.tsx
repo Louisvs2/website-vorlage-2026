@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { CookieConsent } from "@/components/shared/cookie-consent";
 import { WhatsAppButton } from "@/components/shared/whatsapp-button";
 import { features } from "@/config/features";
 import { activeLook, darkLooks } from "@/config/theme";
@@ -33,6 +34,7 @@ export default function RootLayout({
         {features.whatsapp.enabled && features.whatsapp.number && (
           <WhatsAppButton number={features.whatsapp.number} />
         )}
+        {features.analytics && <CookieConsent />}
       </body>
     </html>
   );
