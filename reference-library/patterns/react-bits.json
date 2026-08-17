@@ -1,0 +1,33 @@
+{
+  "source": "react-bits",
+  "patterns": [
+    {
+      "name": "text-scramble-reveal",
+      "type": "text-animation",
+      "complexity": "medium",
+      "reusability": "low",
+      "note": "Candidate only for an explicitly experimental future look; not part of current 9 themes."
+    },
+    {
+      "name": "generative-canvas-background",
+      "type": "decorative-background",
+      "complexity": "high",
+      "reusability": "low",
+      "note": "WebGL/GSAP cost conflicts with CLAUDE.md §3 performance discipline; not adopted."
+    },
+    {
+      "name": "magnetic-cursor-pull",
+      "type": "hover-interaction",
+      "complexity": "low",
+      "reusability": "high",
+      "note": "Already implemented independently as src/components/motion/magnetic.tsx."
+    },
+    {
+      "name": "count-up-number",
+      "type": "data-animation",
+      "complexity": "low",
+      "reusability": "high",
+      "note": "Already implemented independently as AnimatedNumber."
+    }
+  ]
+}

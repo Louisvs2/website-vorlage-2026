@@ -1,0 +1,47 @@
+{
+  "source": "aceternity-ui",
+  "patterns": [
+    {
+      "name": "cursor-spotlight-card",
+      "type": "card-interaction",
+      "complexity": "low",
+      "reusability": "high",
+      "note": "Already implemented independently as src/components/motion/spotlight-card.tsx, gated by --spotlight-strength."
+    },
+    {
+      "name": "aurora-gradient-background",
+      "type": "decorative-background",
+      "complexity": "medium",
+      "reusability": "low",
+      "note": "Conflicts with DESIGN.md §18 ban on multi-color gradient washes; not adopted."
+    },
+    {
+      "name": "3d-tilt-card",
+      "type": "card-interaction",
+      "complexity": "medium",
+      "reusability": "medium",
+      "note": "Candidate for a future high-motion look only; not part of current 9 themes."
+    },
+    {
+      "name": "bento-grid-layout",
+      "type": "grid-pattern",
+      "complexity": "low",
+      "reusability": "high",
+      "note": "Backlog item — see ROADMAP.md grid-system phase."
+    },
+    {
+      "name": "scroll-triggered-reveal-sequence",
+      "type": "scroll-animation",
+      "complexity": "low",
+      "reusability": "high",
+      "note": "Conceptually already covered by FadeInStagger; no new component needed."
+    },
+    {
+      "name": "direction-aware-hover",
+      "type": "hover-interaction",
+      "complexity": "medium",
+      "reusability": "low",
+      "note": "Decorative rather than functional per DESIGN.md §10 purpose test; not adopted."
+    }
+  ]
+}

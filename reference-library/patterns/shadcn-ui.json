@@ -1,0 +1,33 @@
+{
+  "source": "shadcn-ui",
+  "patterns": [
+    {
+      "name": "radix-primitive-plus-cva-variants",
+      "type": "component-architecture",
+      "complexity": "low",
+      "reusability": "high",
+      "note": "Already this project's own architecture — src/components/ui/button.tsx and all shadcn-derived primitives follow this exactly."
+    },
+    {
+      "name": "copy-source-own-it-distribution",
+      "type": "distribution-model",
+      "complexity": "low",
+      "reusability": "high",
+      "note": "This project's whole component library already follows this model; CLAUDE.md §5 codifies it."
+    },
+    {
+      "name": "accessible-sheet-drawer",
+      "type": "overlay-pattern",
+      "complexity": "low",
+      "reusability": "high",
+      "note": "Already implemented as src/components/ui/sheet.tsx, used by MobileNav."
+    },
+    {
+      "name": "form-field-with-linked-error",
+      "type": "form-pattern",
+      "complexity": "low",
+      "reusability": "high",
+      "note": "Already implemented in ContactForm (aria-invalid + aria-describedby)."
+    }
+  ]
+}

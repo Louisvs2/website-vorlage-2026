@@ -1,0 +1,26 @@
+{
+  "source": "magic-ui",
+  "patterns": [
+    {
+      "name": "logo-marquee",
+      "type": "content-section",
+      "complexity": "low",
+      "reusability": "medium",
+      "note": "Candidate variant for LogoCloud when a client has many logos; not built (LogoCloud currently static, no marquee)."
+    },
+    {
+      "name": "animated-beam-connector",
+      "type": "decorative-illustration",
+      "complexity": "medium",
+      "reusability": "low",
+      "note": "SaaS-integration-diagram specific; weak fit outside that niche, not adopted."
+    },
+    {
+      "name": "number-ticker",
+      "type": "data-animation",
+      "complexity": "low",
+      "reusability": "high",
+      "note": "Already implemented independently as AnimatedNumber."
+    }
+  ]
+}

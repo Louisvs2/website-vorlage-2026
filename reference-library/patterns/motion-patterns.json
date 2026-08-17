@@ -1,0 +1,33 @@
+{
+  "source": "motion-patterns",
+  "patterns": [
+    {
+      "name": "lazy-motion-scoped-variants",
+      "type": "implementation-technique",
+      "complexity": "low",
+      "reusability": "high",
+      "note": "Already this project's convention (FadeIn/FadeInStagger use LazyMotion + domAnimation to keep the runtime out of the main bundle)."
+    },
+    {
+      "name": "scroll-linked-progress-value",
+      "type": "scroll-animation",
+      "complexity": "medium",
+      "reusability": "low",
+      "note": "Only ever a few px of drift on imagery per DESIGN.md §11; never on text; not currently built."
+    },
+    {
+      "name": "shared-layout-transition",
+      "type": "page-transition",
+      "complexity": "high",
+      "reusability": "low",
+      "note": "Backlog — relevant to a future case-study gallery-to-detail transition; not built."
+    },
+    {
+      "name": "reduced-motion-gated-variant",
+      "type": "accessibility-technique",
+      "complexity": "low",
+      "reusability": "high",
+      "note": "Already this project's convention throughout src/components/motion/."
+    }
+  ]
+}

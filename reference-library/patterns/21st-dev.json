@@ -1,0 +1,26 @@
+{
+  "source": "21st-dev",
+  "patterns": [
+    {
+      "name": "masonry-image-gallery",
+      "type": "grid-pattern",
+      "complexity": "medium",
+      "reusability": "medium",
+      "note": "Backlog — current Gallery is a uniform grid; masonry is a candidate grid-system addition (ROADMAP.md)."
+    },
+    {
+      "name": "lightbox-on-click-image",
+      "type": "media-interaction",
+      "complexity": "medium",
+      "reusability": "medium",
+      "note": "Considered and deliberately deferred for Gallery — user chose plain hover-zoom + link-through instead."
+    },
+    {
+      "name": "asymmetric-editorial-project-grid",
+      "type": "grid-pattern",
+      "complexity": "medium",
+      "reusability": "medium",
+      "note": "Backlog — relevant to the editorial/hero-editorial family for a future portfolio-heavy template."
+    }
+  ]
+}

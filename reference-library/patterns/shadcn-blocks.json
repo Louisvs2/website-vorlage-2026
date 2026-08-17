@@ -1,0 +1,33 @@
+{
+  "source": "shadcn-blocks",
+  "patterns": [
+    {
+      "name": "hero-plus-proof-strip-plus-cta-arc",
+      "type": "page-composition",
+      "complexity": "low",
+      "reusability": "high",
+      "note": "Matches this project's own canonical arc in DESIGN.md §14; used as cross-check, not source."
+    },
+    {
+      "name": "pricing-tier-comparison-grid",
+      "type": "content-section",
+      "complexity": "medium",
+      "reusability": "high",
+      "note": "Already implemented as PricingTable (src/components/sections/pricing.tsx)."
+    },
+    {
+      "name": "logo-cloud-social-proof-strip",
+      "type": "content-section",
+      "complexity": "low",
+      "reusability": "high",
+      "note": "Already implemented as LogoCloud."
+    },
+    {
+      "name": "footer-with-link-columns-and-legal-bar",
+      "type": "layout-pattern",
+      "complexity": "low",
+      "reusability": "high",
+      "note": "Already implemented as Footer, config-driven from navigation.ts."
+    }
+  ]
+}
