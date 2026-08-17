@@ -58,3 +58,14 @@ This file defines **how** we work. It does not describe the project's architectu
 - **Consider SEO.** Every page gets metadata via the metadata factory, one `<h1>`, a logical heading hierarchy, and structured data where applicable. No content hidden behind client-side loading.
 - **Clean file structure.** Files go where `PLAN.md` says they go. No parallel structures, no dumping grounds, no `utils2.ts`.
 - **Think first, then code.** Understand the problem, pick the simplest solution that meets the quality bar, and only then start writing code.
+
+## 8. Website OS — Library Work vs. Client Work
+
+This repository is two things at once, and the rules above apply differently to each:
+
+- **The library** — the theme system, component registry, motion system, and reference library (see `ARCHITECTURE.md`) — is built deliberately for breadth and reuse across very different industries. Growing it (a new theme, a new registry entry, a new documented pattern) is not "speculative" in the sense §1 warns about: it has a concrete, immediate consumer (the next client project) and is scoped, reviewed, and documented like any other change.
+- **A client project** — an actual website built from the library for a specific brief — stays exactly as minimal as §1 demands. A client gets the theme, components, and pages their brief calls for, never "all nine themes just in case" or a registry entry nobody asked for. The library existing does not license bloat in what ships to a client.
+- **Prefer existing before extending, extend before inventing.** Priority order for any new website: existing component → existing component + variant → existing pattern (see `reference-library/`) → new component. A new component is justified in the registry (`COMPONENT_REGISTRY.md`) with what it covers that nothing existing does.
+- **New library components are registered, not just written.** Adding a component to `src/components/` without a corresponding entry in `src/registry/components.ts` is an incomplete change — the registry is how future work finds it instead of re-inventing it.
+- **New themes are art direction, not palette swaps.** A theme earns its place by being structurally distinguishable (see `THEMES.md`) — color alone is not a new theme.
+- **External inspiration is abstracted, never copied.** Patterns researched into `reference-library/` are re-implemented against this design system, per the No-Direct-Copy rule in `REFERENCE_LIBRARY.md` — not pasted in as foreign code or foreign visual identity.
