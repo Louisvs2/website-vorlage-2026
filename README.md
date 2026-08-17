@@ -1,11 +1,13 @@
 # website-vorlage-2026
 
-Wiederverwendbares Website-Template für Agentur-/Kundenprojekte. Next.js 15
+Ein **Website OS**: eine wiederverwendbare Design-/Component-/Theme-
+Bibliothek für Agentur-/Kundenprojekte, kein einzelnes Template. Next.js 15
 (App Router, React 19, TypeScript strict, Tailwind CSS 4), mit einem
-Look-Preset-System (glass / editorial / minimal / bold / cinema / noir) unter
-`/looks`, das als Ausgangspunkt für jedes neue Kundenprojekt dient. `cinema`
-und `noir` sind eigenständig dunkle Looks für Marken, die grundsätzlich
-dunkel wirken sollen (Museum, Immobilien, Luxus, Nightlife).
+Look-System aus 9 strukturell eigenständigen Art Directions (glass /
+editorial / minimal / bold / cinema / noir / brutalist / swiss / organic)
+unter `/looks` — siehe `THEMES.md`. Ein neues Kundenprojekt wird aus dieser
+Bibliothek komponiert, nicht neu programmiert: `ARCHITECTURE.md` beschreibt
+das Gesamtsystem, `AI_WEBSITE_BUILDER.md` den Discovery-Workflow dafür.
 
 ## Nutzung für ein neues Kundenprojekt
 
@@ -39,3 +41,20 @@ Details in `PLAN.md`. Kurzfassung:
 - `src/components/` — wiederverwendbare Sections und UI-Bausteine
 - `src/content/` — seiten-/kundenspezifische Inhalte (props-driven Sections)
 - `src/config/` — Site-Konfiguration (Name, Kontakt, Social-Profile)
+- `src/registry/` — maschinenlesbare Component-Registry (`COMPONENT_REGISTRY.md`)
+- `reference-library/` — dokumentierte externe UI-Pattern-Recherche (`REFERENCE_LIBRARY.md`)
+
+## Website OS — weitere Dokumentation
+
+| Frage                                   | Dokument                |
+| --------------------------------------- | ----------------------- |
+| Gesamtarchitektur (5 Ebenen)            | `ARCHITECTURE.md`       |
+| Design-Tokens im Detail                 | `DESIGN_SYSTEM.md`      |
+| Alle 9 Looks + wann welcher passt       | `THEMES.md`             |
+| Alle Components im Überblick            | `COMPONENT_LIBRARY.md`  |
+| Component vor dem Bauen suchen          | `COMPONENT_REGISTRY.md` |
+| Motion-Patterns                         | `MOTION_SYSTEM.md`      |
+| Externe Inspiration, richtig genutzt    | `REFERENCE_LIBRARY.md`  |
+| Neues Kundenprojekt: Discovery-Workflow | `AI_WEBSITE_BUILDER.md` |
+| Entscheidungen vor dem Coden            | `WEBSITE_ARCHITECT.md`  |
+| Was ist gebaut, was ist Backlog         | `ROADMAP.md`            |

@@ -2,6 +2,8 @@
 
 Architekturplan für das Starter-Template der Webagentur. Dieses Dokument ist die verbindliche Grundlage für die Implementierung und wird bei Architekturentscheidungen fortgeschrieben.
 
+Dieses Repository ist zugleich ein **Website OS**: eine wiederverwendbare Design-/Component-/Theme-Bibliothek, aus der Kundenprojekte komponiert werden. `ARCHITECTURE.md` beschreibt die fünf Ebenen darüber; dieses Dokument bleibt die Referenz für Tech-Stack und konkrete Ordnerstruktur.
+
 ---
 
 ## 1. Projektziel
@@ -92,12 +94,19 @@ website-template/
 │   │   ├── metadata.ts             # Metadata-Factory für konsistentes SEO
 │   │   └── schema.ts               # JSON-LD-Generatoren (LocalBusiness, FAQ, …)
 │   ├── hooks/                      # useScrollPosition, useMediaQuery, …
+│   ├── registry/
+│   │   └── components.ts           # Maschinenlesbare Component-Registry (COMPONENT_REGISTRY.md)
 │   ├── styles/
 │   │   └── globals.css             # Tailwind + Design-Tokens als CSS-Variablen
 │   └── types/                      # Gemeinsame TypeScript-Typen
 │
 ├── public/
 │   └── images/
+│
+├── reference-library/               # Externe UI-Pattern-Recherche (REFERENCE_LIBRARY.md)
+│   ├── sources/
+│   ├── patterns/
+│   └── analysis/
 │
 ├── scripts/
 │   └── setup-features.mjs          # Interaktiver Wizard für optionale Features
