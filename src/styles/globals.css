@@ -56,6 +56,22 @@
   --spotlight-strength: 1;
   --hover-lift: -0.375rem;
   --magnet-strength: 0.3;
+  /* Structural knobs (ARCHITECTURE.md) — the axes that make a theme a real
+     art direction instead of a palette swap. Default values reproduce the
+     four original looks exactly; only structurally different looks
+     (brutalist, swiss, organic, …) override them. */
+  --border-width: 1px;
+  --shadow-surface: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --section-rhythm: 1;
+  /* Derived, not set per look: the brand-tinted hover glow used by
+     SpotlightCard scales automatically with --spotlight-strength, so a
+     "no glow" look (spotlight-strength: 0) truly has none on hover, not
+     just on the cursor-follow overlay. */
+  --spotlight-glow: color-mix(
+    in oklch,
+    var(--brand) calc(45% * var(--spotlight-strength)),
+    transparent
+  );
 }
 
 .dark {
@@ -219,6 +235,128 @@
   --spotlight-strength: 1;
   --hover-lift: -0.5rem;
   --magnet-strength: 0.35;
+}
+
+/* ===== Look: BRUTALIST — Space Grotesk, raw achromatic, hard offset shadow =====
+ * A fixed light ground, deliberately stark (zero chroma, not the warm shared
+ * ramp) — brutalism rejects softness on principle. Thick black borders and a
+ * hard, unblurred offset shadow (§7/§18 of DESIGN.md call oversized/blurred
+ * shadows a cliché; a *flat, hard-edged* offset shadow with zero blur is the
+ * opposite move and the whole point of this look — a deliberate, documented
+ * exception, see THEMES.md). No lift, no magnetism, no glow: brutalist
+ * elements sit static and heavy. Denser rhythm than the calm default. */
+:root[data-look="brutalist"] {
+  --background: oklch(0.98 0 0);
+  --foreground: oklch(0.12 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.12 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.12 0 0);
+  --primary: oklch(0.12 0 0);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.93 0 0);
+  --secondary-foreground: oklch(0.12 0 0);
+  --muted: oklch(0.93 0 0);
+  --muted-foreground: oklch(0.4 0 0);
+  --accent: oklch(0.93 0 0);
+  --accent-foreground: oklch(0.12 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.12 0 0);
+  --input: oklch(0.12 0 0);
+  --font-display-active: var(--font-space-grotesk);
+  --font-sans-active: var(--font-inter);
+  --radius: 0px;
+  --brand: oklch(0.68 0.21 45);
+  --brand-strong: oklch(0.55 0.19 40);
+  --brand-foreground: oklch(0.12 0 0);
+  --surface: var(--card);
+  --glass-blur: 0px;
+  --spotlight-strength: 0;
+  --hover-lift: 0rem;
+  --magnet-strength: 0;
+  --border-width: 3px;
+  --shadow-surface: 4px 4px 0 0 var(--foreground);
+  --section-rhythm: 0.85;
+}
+
+/* ===== Look: SWISS — Inter, hairline red/black/white, strict flat grid =====
+ * International Typographic Style: a single vivid red, hairline rules as the
+ * only decoration, zero shadow, zero radius. Structurally the quietest new
+ * look (thin 1px borders, not brutalist's thick ones) but the most rigid —
+ * precision over warmth. */
+:root[data-look="swiss"] {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.1 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.1 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.1 0 0);
+  --primary: oklch(0.1 0 0);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.96 0 0);
+  --secondary-foreground: oklch(0.1 0 0);
+  --muted: oklch(0.96 0 0);
+  --muted-foreground: oklch(0.45 0 0);
+  --accent: oklch(0.96 0 0);
+  --accent-foreground: oklch(0.1 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.85 0 0);
+  --input: oklch(0.85 0 0);
+  --font-display-active: var(--font-inter);
+  --font-sans-active: var(--font-inter);
+  --radius: 0px;
+  --brand: oklch(0.58 0.22 25);
+  --brand-strong: oklch(0.5 0.2 25);
+  --brand-foreground: oklch(0.99 0 0);
+  --surface: var(--card);
+  --glass-blur: 0px;
+  --spotlight-strength: 0;
+  --hover-lift: 0rem;
+  --magnet-strength: 0;
+  --border-width: 1px;
+  --shadow-surface: none;
+  --section-rhythm: 0.9;
+}
+
+/* ===== Look: ORGANIC — Fraunces, warm terracotta, soft everything =====
+ * Generous radius, a gentle warm glow, and looser-than-default rhythm — the
+ * opposite pole from brutalist/swiss. For wellness, beauty, hospitality,
+ * craft/food brands where softness and warmth *are* the trust signal. */
+:root[data-look="organic"] {
+  --background: oklch(0.97 0.014 60);
+  --foreground: oklch(0.24 0.02 40);
+  --card: oklch(0.99 0.01 60);
+  --card-foreground: oklch(0.24 0.02 40);
+  --popover: oklch(0.99 0.01 60);
+  --popover-foreground: oklch(0.24 0.02 40);
+  --primary: oklch(0.4 0.08 40);
+  --primary-foreground: oklch(0.99 0.01 60);
+  --secondary: oklch(0.93 0.02 55);
+  --secondary-foreground: oklch(0.3 0.03 40);
+  --muted: oklch(0.93 0.02 55);
+  --muted-foreground: oklch(0.5 0.025 45);
+  --accent: oklch(0.93 0.02 55);
+  --accent-foreground: oklch(0.3 0.03 40);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.88 0.02 55);
+  --input: oklch(0.88 0.02 55);
+  --font-display-active: var(--font-fraunces);
+  --font-sans-active: var(--font-inter);
+  --radius: 1.75rem;
+  --brand: oklch(0.62 0.14 45);
+  --brand-strong: oklch(0.52 0.13 42);
+  --brand-foreground: oklch(0.99 0.01 60);
+  --surface: color-mix(in oklch, var(--card) 70%, transparent);
+  --glass-blur: 12px;
+  --spotlight-strength: 0.6;
+  --hover-lift: -0.25rem;
+  --magnet-strength: 0.25;
+  --border-width: 1px;
+  --shadow-surface: 0 8px 24px -8px oklch(0.4 0.06 45 / 0.18);
+  --section-rhythm: 1.1;
 }
 
 @theme inline {

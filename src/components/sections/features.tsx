@@ -29,7 +29,7 @@ interface FeaturesBaseProps {
 
 function FeatureIcon({ icon: Icon }: { icon: LucideIcon }) {
   return (
-    <div className="flex size-11 items-center justify-center rounded-xl border border-border/60 bg-background/60 backdrop-blur-[var(--glass-blur)] transition-colors group-hover:border-brand/40 group-hover:text-brand">
+    <div className="flex size-11 items-center justify-center rounded-xl border-[length:var(--border-width)] border-border/60 bg-background/60 backdrop-blur-[var(--glass-blur)] transition-colors group-hover:border-brand/40 group-hover:text-brand">
       <Icon className="size-5" aria-hidden />
     </div>
   );
@@ -115,11 +115,13 @@ export function ServiceCards({
       background={background}
       className={cn("relative isolate overflow-hidden", className)}
     >
-      {/* Soft brand glow — gives the frosted cards something to blur against. */}
+      {/* Soft brand glow — gives the frosted cards something to blur against.
+          Scales with --spotlight-strength so flat/no-glow looks show none. */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/3 left-1/2 -z-10 h-[34rem] w-[64rem] max-w-[130%] -translate-x-1/2 rounded-full opacity-[0.1] blur-3xl"
+        className="pointer-events-none absolute top-1/3 left-1/2 -z-10 h-[34rem] w-[64rem] max-w-[130%] -translate-x-1/2 rounded-full blur-3xl"
         style={{
+          opacity: "calc(0.1 * var(--spotlight-strength))",
           background:
             "radial-gradient(closest-side, var(--brand), transparent)",
         }}

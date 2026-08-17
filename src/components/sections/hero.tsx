@@ -130,8 +130,9 @@ export function HeroCentered({
     >
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
         <div
-          className="absolute -top-[14%] left-1/2 h-[38rem] w-[38rem] -translate-x-1/2 rounded-full opacity-[0.14] blur-3xl sm:h-[46rem] sm:w-[46rem]"
+          className="absolute -top-[14%] left-1/2 h-[38rem] w-[38rem] -translate-x-1/2 rounded-full blur-3xl sm:h-[46rem] sm:w-[46rem]"
           style={{
+            opacity: "calc(0.14 * var(--spotlight-strength))",
             background:
               "radial-gradient(closest-side, var(--brand), transparent)",
           }}

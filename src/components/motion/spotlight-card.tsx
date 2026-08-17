@@ -40,10 +40,10 @@ export function SpotlightCard({
       className={cn(
         "group relative flex h-full flex-col overflow-hidden p-6 outline-none sm:p-8 lg:p-10",
         // Surface + corner + blur all come from the active look's feel knobs.
-        "rounded-[calc(var(--radius)+0.375rem)] border border-border/60 bg-[var(--surface)] backdrop-blur-[var(--glass-blur)]",
+        "rounded-[calc(var(--radius)+0.375rem)] border-[length:var(--border-width)] border-border/60 bg-[var(--surface)] backdrop-blur-[var(--glass-blur)]",
         // Lift + accent edge + soft glow on hover; settles slowly.
         "transition duration-300 ease-out hover:translate-y-[var(--hover-lift)] hover:border-brand/50",
-        "hover:shadow-[0_24px_70px_-24px_color-mix(in_oklch,var(--brand)_45%,transparent)]",
+        "hover:shadow-[0_24px_70px_-24px_var(--spotlight-glow)]",
         "focus-visible:ring-[3px] focus-visible:ring-ring/50",
         "motion-reduce:transition-none motion-reduce:hover:translate-y-0",
         className,

@@ -4,18 +4,24 @@ import { cn } from "@/lib/utils";
 
 // The single source of vertical rhythm between sections (DESIGN.md §4, §8).
 // Background variants alternate base and subtly tinted surfaces to
-// structure long pages — never introduce ad-hoc section padding.
-const sectionVariants = cva("py-20 sm:py-28 lg:py-32", {
-  variants: {
-    background: {
-      default: "bg-background",
-      muted: "bg-muted",
+// structure long pages — never introduce ad-hoc section padding. Padding
+// scales with --section-rhythm (default 1 reproduces the original
+// 5/7/8rem measures exactly), so a theme can be tighter or more spacious
+// without every section being touched individually (ARCHITECTURE.md).
+const sectionVariants = cva(
+  "py-[calc(5rem*var(--section-rhythm))] sm:py-[calc(7rem*var(--section-rhythm))] lg:py-[calc(8rem*var(--section-rhythm))]",
+  {
+    variants: {
+      background: {
+        default: "bg-background",
+        muted: "bg-muted",
+      },
+    },
+    defaultVariants: {
+      background: "default",
     },
   },
-  defaultVariants: {
-    background: "default",
-  },
-});
+);
 
 export type SectionBackground = VariantProps<
   typeof sectionVariants
